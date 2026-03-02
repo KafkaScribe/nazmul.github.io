@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "FormFlow Pro",
+  "version": "1.0.0",
+  "description": "Smart form autofiller with multiple profiles for seamless web form completion",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "FormFlow Pro"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+} 

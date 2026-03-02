@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormFlow Pro</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FormFlow Pro</h1>
+            <p class="subtitle">Smart Form Autofiller</p>
+        </header>
+
+        <!-- Quick Profile Creation -->
+        <div class="quick-profile-section">
+            <h3>Quick Profile</h3>
+            <div class="quick-form">
+                <input type="text" id="quickName" placeholder="Profile Name (e.g., Work, Personal)" class="quick-input">
+                <input type="text" id="quickEmail" placeholder="Email" class="quick-input">
+                <input type="text" id="quickPhone" placeholder="Phone (optional)" class="quick-input">
+                <button id="quickSaveBtn" class="btn-primary">Save Quick Profile</button>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-header">
+                <h2>Your Profiles</h2>
+                <button id="addProfileBtn" class="btn-secondary">+ Full Profile</button>
+            </div>
+            
+            <div id="profileList" class="profile-list">
+                <!-- Profiles will be loaded here -->
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <button id="fillFormBtn" class="btn-success" disabled>
+                <span class="icon">📝</span>
+                Fill Current Form
+            </button>
+            <button id="saveFormBtn" class="btn-info">
+                <span class="icon">💾</span>
+                Save Form Data
+            </button>
+        </div>
+
+        <div class="status-section">
+            <div id="statusMessage" class="status-message"></div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Create Profile</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="profileForm">
+                    <div class="form-section">
+                        <h4>Basic Info</h4>
+                        <div class="form-group">
+                            <label for="profileName">Profile Name *</label>
+                            <input type="text" id="profileName" placeholder="e.g., Work, Personal, Shopping" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Address (Optional)</h4>
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <textarea id="address" rows="2" placeholder="123 Main St"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" placeholder="New York">
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" id="state" placeholder="NY">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zipCode">ZIP Code</label>
+                                <input type="text" id="zipCode" placeholder="10001">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" placeholder="USA">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Business (Optional)</h4>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" placeholder="Acme Corp">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" id="website" placeholder="https://example.com">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="saveProfileBtn" class="btn-primary">Save Profile</button>
+                <button type="button" id="cancelProfileBtn" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 
