@@ -1,9 +1,9 @@
 /* ============================================
-   HACKER TERMINAL PORTFOLIO — Script
+   CYBERPUNK PORTFOLIO — Script
    ============================================ */
 
-// ─── Matrix Rain ─────────────────────────
-(function initMatrix() {
+// ─── Particle Network Background ─────────
+(function initParticles() {
     const canvas = document.getElementById('matrix-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -15,35 +15,82 @@
     resize();
     window.addEventListener('resize', resize);
 
-    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF{}[]<>/\\|';
-    const fontSize = 14;
-    let columns = Math.floor(canvas.width / fontSize);
-    let drops = new Array(columns).fill(1);
+    const particles = [];
+    const PARTICLE_COUNT = 80;
+    const CONNECTION_DIST = 150;
+    const MOUSE_DIST = 200;
 
-    window.addEventListener('resize', () => {
-        columns = Math.floor(canvas.width / fontSize);
-        drops = new Array(columns).fill(1);
+    let mouse = { x: -999, y: -999 };
+    document.addEventListener('mousemove', e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
     });
 
-    function draw() {
-        ctx.fillStyle = 'rgba(11, 0, 20, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = '#05d9e8';
-        ctx.font = fontSize + 'px monospace';
-
-        for (let i = 0; i < drops.length; i++) {
-            const text = chars.charAt(Math.floor(Math.random() * chars.length));
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                drops[i] = 0;
-            }
-            drops[i]++;
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 0.5;
+        }
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 212, 255, 0.6)';
+            ctx.fill();
         }
     }
 
-    setInterval(draw, 50);
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+    }
+
+    function drawLines() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < CONNECTION_DIST) {
+                    const alpha = (1 - dist / CONNECTION_DIST) * 0.15;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+            // Mouse connection
+            const dx = particles[i].x - mouse.x;
+            const dy = particles[i].y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < MOUSE_DIST) {
+                const alpha = (1 - dist / MOUSE_DIST) * 0.3;
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(mouse.x, mouse.y);
+                ctx.strokeStyle = `rgba(255, 107, 53, ${alpha})`;
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+            }
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        drawLines();
+        requestAnimationFrame(animate);
+    }
+    animate();
 })();
 
 
@@ -79,7 +126,7 @@
             el.textContent = current.substring(0, charIndex + 1);
             charIndex++;
             if (charIndex === current.length) {
-                pauseTime = 30; // pause at end
+                pauseTime = 30;
                 deleting = true;
             }
         } else {
@@ -109,12 +156,8 @@ document.querySelectorAll('.nav-cmd').forEach(link => {
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth' });
             }
-
-            // update active state
             document.querySelectorAll('.nav-cmd').forEach(l => l.classList.remove('active'));
             link.classList.add('active');
-
-            // close mobile menu
             document.querySelector('.nav-links')?.classList.remove('open');
         }
     });
