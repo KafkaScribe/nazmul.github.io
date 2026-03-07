@@ -53,11 +53,12 @@
     if (!el) return;
 
     const phrases = [
-        'Cybersecurity Enthusiast',
-        'Bug Bounty Hunter',
-        'Vulnerability Researcher',
+        'Security Researcher',
+        'Bug Bounty Hunter | 470+ Rep',
         'Penetration Tester',
-        'Security Analyst',
+        'Vulnerability Researcher',
+        'CTF Organizer & Problem Setter',
+        '$6,000+ in Validated Bounties',
     ];
 
     let phraseIndex = 0;
@@ -200,17 +201,23 @@ if (mobileToggle) {
             if (entry.isIntersecting) {
                 const el = entry.target;
                 const target = parseInt(el.getAttribute('data-target'), 10);
+                const prefix = el.getAttribute('data-prefix') || '';
+                const suffix = el.getAttribute('data-suffix') || '';
                 let count = 0;
                 const duration = 1500;
                 const increment = target / (duration / 16);
 
+                function format(n) {
+                    return prefix + n.toLocaleString() + suffix;
+                }
+
                 function step() {
                     count += increment;
                     if (count < target) {
-                        el.textContent = Math.floor(count);
+                        el.textContent = format(Math.floor(count));
                         requestAnimationFrame(step);
                     } else {
-                        el.textContent = target;
+                        el.textContent = format(target);
                     }
                 }
                 requestAnimationFrame(step);

@@ -3,7 +3,9 @@
    ============================================ */
 
 /* --- Reset & Base --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -66,13 +68,11 @@ body {
     height: 100%;
     z-index: 1;
     pointer-events: none;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0, 255, 65, 0.015) 2px,
-        rgba(0, 255, 65, 0.015) 4px
-    );
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 65, 0.015) 2px,
+            rgba(0, 255, 65, 0.015) 4px);
 }
 
 /* --- Navigation --- */
@@ -143,6 +143,7 @@ body {
     cursor: pointer;
     padding: 4px;
 }
+
 .mobile-toggle span {
     display: block;
     width: 24px;
@@ -155,6 +156,7 @@ body {
 .glitch-text {
     position: relative;
 }
+
 .glitch-text::before,
 .glitch-text::after {
     content: attr(data-text);
@@ -165,11 +167,13 @@ body {
     height: 100%;
     pointer-events: none;
 }
+
 .glitch-text::before {
     color: var(--green);
     animation: glitch-1 2.5s infinite linear alternate-reverse;
     clip-path: inset(0 0 80% 0);
 }
+
 .glitch-text::after {
     color: #0ff;
     animation: glitch-2 2.5s infinite linear alternate-reverse;
@@ -177,16 +181,45 @@ body {
 }
 
 @keyframes glitch-1 {
-    0%, 90%, 100% { transform: translate(0); }
-    92% { transform: translate(-3px, 1px); }
-    94% { transform: translate(3px, -1px); }
-    96% { transform: translate(-2px, 2px); }
+
+    0%,
+    90%,
+    100% {
+        transform: translate(0);
+    }
+
+    92% {
+        transform: translate(-3px, 1px);
+    }
+
+    94% {
+        transform: translate(3px, -1px);
+    }
+
+    96% {
+        transform: translate(-2px, 2px);
+    }
 }
+
 @keyframes glitch-2 {
-    0%, 90%, 100% { transform: translate(0); }
-    91% { transform: translate(2px, -1px); }
-    93% { transform: translate(-3px, 1px); }
-    95% { transform: translate(1px, 2px); }
+
+    0%,
+    90%,
+    100% {
+        transform: translate(0);
+    }
+
+    91% {
+        transform: translate(2px, -1px);
+    }
+
+    93% {
+        transform: translate(-3px, 1px);
+    }
+
+    95% {
+        transform: translate(1px, 2px);
+    }
 }
 
 /* --- Hero Section --- */
@@ -242,7 +275,9 @@ body {
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
 .hero-badges {
@@ -262,6 +297,7 @@ body {
     color: var(--text);
     transition: all 0.3s ease;
 }
+
 .badge:hover {
     border-color: var(--green);
     box-shadow: 0 0 12px var(--green-glow);
@@ -277,6 +313,7 @@ body {
     font-size: 0.9rem;
     transition: all 0.3s ease;
 }
+
 .cta-btn:hover {
     background: var(--green);
     color: var(--bg);
@@ -328,6 +365,7 @@ body {
     margin-bottom: 1.5rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .terminal-window:hover {
     border-color: var(--green-dim);
     box-shadow: 0 0 20px var(--green-glow);
@@ -347,9 +385,18 @@ body {
     height: 11px;
     border-radius: 50%;
 }
-.dot.red { background: var(--red); }
-.dot.yellow { background: var(--yellow); }
-.dot.green { background: var(--green-dot); }
+
+.dot.red {
+    background: var(--red);
+}
+
+.dot.yellow {
+    background: var(--yellow);
+}
+
+.dot.green {
+    background: var(--green-dot);
+}
 
 .terminal-title {
     margin-left: 8px;
@@ -413,6 +460,7 @@ body {
     padding: 1.5rem 1rem;
     transition: all 0.3s ease;
 }
+
 .stat-card:hover {
     border-color: var(--green-dim);
     box-shadow: 0 0 15px var(--green-glow);
@@ -520,6 +568,7 @@ body {
     transition: all 0.3s ease;
     cursor: default;
 }
+
 .tool-chip:hover {
     color: var(--green);
     border-color: var(--green);
@@ -538,6 +587,57 @@ body {
     min-height: 160px;
 }
 
+/* --- Certifications --- */
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    font-size: 0.82rem;
+    transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+    border-color: var(--green-dim);
+    box-shadow: 0 0 12px var(--green-glow);
+    transform: translateY(-2px);
+}
+
+.cert-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.cert-name {
+    color: var(--text);
+}
+
+/* --- Recognitions --- */
+.recognition-entry {
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    margin: 0.1rem 0;
+}
+
+.recognition-entry:hover {
+    background: var(--green-glow);
+}
+
+.bracket {
+    color: var(--yellow);
+    font-weight: 600;
+}
+
 /* --- Contact --- */
 .contact-terminal .terminal-line {
     margin-bottom: 0.1rem;
@@ -553,6 +653,7 @@ body {
     border-bottom: 1px dashed var(--green-dim);
     transition: all 0.2s ease;
 }
+
 .contact-link:hover {
     text-shadow: 0 0 8px var(--green-glow);
 }
@@ -579,6 +680,7 @@ body {
     transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
+
 .reveal-section.revealed {
     opacity: 1;
     transform: translateY(0);
@@ -597,12 +699,15 @@ body {
         padding: 1rem 0;
         border-bottom: 1px solid var(--border);
     }
+
     .nav-links.open {
         display: flex;
     }
+
     .nav-cmd {
         padding: 0.6rem 1.5rem;
     }
+
     .mobile-toggle {
         display: flex;
     }
@@ -611,9 +716,11 @@ body {
         grid-template-columns: repeat(3, 1fr);
         gap: 0.6rem;
     }
+
     .stat-value {
         font-size: 1.6rem;
     }
+
     .stat-label {
         font-size: 0.65rem;
     }
@@ -635,16 +742,20 @@ body {
     .section {
         padding: 3rem 1rem;
     }
+
     .terminal-body {
         padding: 1rem;
     }
+
     .skill-name {
         min-width: 75px;
         font-size: 0.72rem;
     }
+
     .hero-badges {
         gap: 0.4rem;
     }
+
     .badge {
         font-size: 0.7rem;
         padding: 0.3rem 0.7rem;
