@@ -1,5 +1,5 @@
 /* ============================================
-   HACKER TERMINAL PORTFOLIO — Nazmul Haque
+   CYBERPUNK PORTFOLIO — Nazmul Haque Jowel
    ============================================ */
 
 /* --- Reset & Base --- */
@@ -12,19 +12,21 @@
 }
 
 :root {
-    --bg: #0a0a0a;
-    --bg-panel: #0d1117;
-    --bg-card: #111820;
-    --green: #00ff41;
-    --green-dim: #00cc33;
-    --green-glow: rgba(0, 255, 65, 0.15);
-    --green-glow-strong: rgba(0, 255, 65, 0.35);
-    --text: #c9d1d9;
-    --text-dim: #6e7681;
+    --bg: #0b0014;
+    --bg-panel: #110a1f;
+    --bg-card: #160e26;
+    --green: #ff2a6d;
+    --green-dim: #d91b5c;
+    --green-glow: rgba(255, 42, 109, 0.15);
+    --green-glow-strong: rgba(255, 42, 109, 0.35);
+    --cyan: #05d9e8;
+    --cyan-glow: rgba(5, 217, 232, 0.2);
+    --text: #d1d5db;
+    --text-dim: #7a7f8a;
     --red: #ff5f56;
-    --yellow: #ffbd2e;
-    --green-dot: #27c93f;
-    --border: #1a2332;
+    --yellow: #f5a623;
+    --green-dot: #05d9e8;
+    --border: #2a1a3e;
     --font-mono: 'Fira Code', 'Courier New', monospace;
 }
 
@@ -71,8 +73,8 @@ body {
     background: repeating-linear-gradient(0deg,
             transparent,
             transparent 2px,
-            rgba(0, 255, 65, 0.015) 2px,
-            rgba(0, 255, 65, 0.015) 4px);
+            rgba(5, 217, 232, 0.012) 2px,
+            rgba(5, 217, 232, 0.012) 4px);
 }
 
 /* --- Navigation --- */
@@ -175,7 +177,7 @@ body {
 }
 
 .glitch-text::after {
-    color: #0ff;
+    color: var(--cyan);
     animation: glitch-2 2.5s infinite linear alternate-reverse;
     clip-path: inset(80% 0 0 0);
 }

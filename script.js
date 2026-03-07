@@ -26,10 +26,10 @@
     });
 
     function draw() {
-        ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+        ctx.fillStyle = 'rgba(11, 0, 20, 0.05)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = '#00ff41';
+        ctx.fillStyle = '#05d9e8';
         ctx.font = fontSize + 'px monospace';
 
         for (let i = 0; i < drops.length; i++) {
