@@ -1,57 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Nazmul Haque | Portfolio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazmul Haque | Security Researcher</title>
+    <meta name="description"
+        content="Nazmul Haque — Cybersecurity Researcher, Bug Hunter, and Software Engineering student. Secured NASA, UN, WHO, Disney, Sony, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
-<h1>Nazmul Haque</h1>
-<p>Cybersecurity Enthusiast | Bug Hunter</p>
-</header>
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix-canvas"></canvas>
 
-<section id="about">
-<h2>About Me</h2>
-<p>
-I am passionate about cybersecurity, vulnerability research,
-and building security frameworks. I enjoy bug bounty hunting
-and developing security tools.
-</p>
-</section>
+    <!-- Scanline Overlay -->
+    <div class="scanline-overlay"></div>
 
-<section id="projects">
-<h2>Projects</h2>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo glitch-text" data-text="NH">NH</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-cmd active"><span class="prompt">&gt;</span> home</a></li>
+                <li><a href="#about" class="nav-cmd"><span class="prompt">&gt;</span> about</a></li>
+                <li><a href="#skills" class="nav-cmd"><span class="prompt">&gt;</span> skills</a></li>
+                <li><a href="#projects" class="nav-cmd"><span class="prompt">&gt;</span> projects</a></li>
+                <li><a href="#contact" class="nav-cmd"><span class="prompt">&gt;</span> contact</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
 
-<div class="card">
-<h3>FORTRESS Framework</h3>
-<p>A threat-oriented vulnerability scoring framework designed for academic institutions.</p>
-</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <p class="hero-prefix">$ whoami</p>
+            <h1 class="glitch-text" data-text="Nazmul Haque">Nazmul Haque</h1>
+            <div class="typed-container">
+                <span class="typed-prefix">root@nazmul:~$&nbsp;</span>
+                <span id="typed-text"></span>
+                <span class="cursor-blink">█</span>
+            </div>
+            <div class="hero-badges">
+                <span class="badge">🛡️ Security Researcher</span>
+                <span class="badge">🐛 Bug Hunter</span>
+                <span class="badge">💻 Developer</span>
+            </div>
+            <a href="#about" class="cta-btn">
+                <span class="prompt">&gt;</span> cat about.txt
+            </a>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Bug Bounty Research</h3>
-<p>Finding and responsibly disclosing security vulnerabilities.</p>
-</div>
+    <!-- About Section -->
+    <section id="about" class="section reveal-section">
+        <div class="section-inner">
+            <h2 class="section-title"><span class="prompt">#</span> About Me</h2>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">~/about.txt</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-line">
+                        <span class="line-num">01</span>
+                        As a Security Researcher, my days are fueled by the
+                    </p>
+                    <p class="terminal-line">
+                        <span class="line-num">02</span>
+                        drive to fortify web applications against cyber threats.
+                    </p>
+                    <p class="terminal-line">
+                        <span class="line-num">03</span>
+                        Currently honing my skills in Software Engineering at
+                    </p>
+                    <p class="terminal-line">
+                        <span class="line-num">04</span>
+                        Daffodil International University.
+                    </p>
+                    <p class="terminal-line">
+                        <span class="line-num">05</span>
+                        &nbsp;
+                    </p>
+                    <p class="terminal-line highlight-line">
+                        <span class="line-num">06</span>
+                        Secured: <span class="accent">NASA</span>, <span class="accent">UN</span>, <span
+                            class="accent">WHO</span>, <span class="accent">Disney</span>, <span
+                            class="accent">Sony</span>,
+                    </p>
+                    <p class="terminal-line highlight-line">
+                        <span class="line-num">07</span>
+                        <span class="accent">Thomson Reuters</span> — and got acknowledged by them.
+                    </p>
+                </div>
+            </div>
 
-<div class="card">
-<h3>Portfolio Website</h3>
-<p>This portfolio hosted on GitHub Pages.</p>
-</div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" data-target="3">0</span>
+                    <span class="stat-label">Years Exp.</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" data-target="15">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" data-target="25">0</span>
+                    <span class="stat-label">Bugs Found</span>
+                </div>
+            </div>
 
-</section>
+            <div class="info-grid">
+                <div class="info-item"><span class="info-key">name</span>: <span class="info-val">"Nazmul Haque"</span>
+                </div>
+                <div class="info-item"><span class="info-key">age</span>: <span class="info-val">23</span></div>
+                <div class="info-item"><span class="info-key">university</span>: <span class="info-val">"Daffodil
+                        International University"</span></div>
+                <div class="info-item"><span class="info-key">department</span>: <span class="info-val">"Software
+                        Engineering"</span></div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: nazmul@example.com</p>
-<p>GitHub: https://github.com/KafkaScribe</p>
-</section>
+    <!-- Skills Section -->
+    <section id="skills" class="section reveal-section">
+        <div class="section-inner">
+            <h2 class="section-title"><span class="prompt">#</span> Skills</h2>
 
-<footer>
-<p>© 2026 Nazmul Haque</p>
-</footer>
+            <div class="skills-columns">
+                <!-- Security -->
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">~/skills/security</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="skill-row">
+                            <span class="skill-name">Bug Hunting</span>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-percent="90"></div>
+                            </div>
+                            <span class="skill-pct">90%</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">Pentesting</span>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-percent="85"></div>
+                            </div>
+                            <span class="skill-pct">85%</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">Network Sec.</span>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-percent="80"></div>
+                            </div>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                    </div>
+                </div>
 
-<script src="script.js"></script>
+                <!-- Development -->
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">~/skills/development</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="skill-row">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-percent="95"></div>
+                            </div>
+                            <span class="skill-pct">95%</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-percent="85"></div>
+                            </div>
+                            <span class="skill-pct">85%</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-percent="80"></div>
+                            </div>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data -->
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">~/skills/data</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="skill-row">
+                            <span class="skill-name">Data Viz</span>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-percent="85"></div>
+                            </div>
+                            <span class="skill-pct">85%</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">Statistics</span>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-percent="75"></div>
+                            </div>
+                            <span class="skill-pct">75%</span>
+                        </div>
+                        <div class="skill-row">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-percent="80"></div>
+                            </div>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <h3 class="sub-title"><span class="prompt">&gt;</span> ls tools/</h3>
+            <div class="tools-grid">
+                <div class="tool-chip">Python</div>
+                <div class="tool-chip">JavaScript</div>
+                <div class="tool-chip">HTML5</div>
+                <div class="tool-chip">CSS3</div>
+                <div class="tool-chip">SQL</div>
+                <div class="tool-chip">Git</div>
+                <div class="tool-chip">Linux</div>
+                <div class="tool-chip">Bash</div>
+                <div class="tool-chip">Burp Suite</div>
+                <div class="tool-chip">Nmap</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section reveal-section">
+        <div class="section-inner">
+            <h2 class="section-title"><span class="prompt">#</span> Projects</h2>
+
+            <div class="projects-grid">
+                <div class="terminal-window project-card">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">FORTRESS Framework</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="terminal-line"><span class="line-comment">// Threat-oriented vulnerability
+                                scoring</span></p>
+                        <p class="terminal-line"><span class="line-comment">// framework designed for academic</span>
+                        </p>
+                        <p class="terminal-line"><span class="line-comment">// institutions.</span></p>
+                        <p class="terminal-line">&nbsp;</p>
+                        <p class="terminal-line"><span class="accent">status</span>: <span
+                                class="string-val">"active"</span></p>
+                        <p class="terminal-line"><span class="accent">type</span>: <span
+                                class="string-val">"security-framework"</span></p>
+                    </div>
+                </div>
+
+                <div class="terminal-window project-card">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">Bug Bounty Research</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="terminal-line"><span class="line-comment">// Finding and responsibly disclosing</span>
+                        </p>
+                        <p class="terminal-line"><span class="line-comment">// security vulnerabilities in major</span>
+                        </p>
+                        <p class="terminal-line"><span class="line-comment">// organizations worldwide.</span></p>
+                        <p class="terminal-line">&nbsp;</p>
+                        <p class="terminal-line"><span class="accent">status</span>: <span
+                                class="string-val">"ongoing"</span></p>
+                        <p class="terminal-line"><span class="accent">targets</span>: <span class="string-val">"NASA,
+                                UN, WHO, ..."</span></p>
+                    </div>
+                </div>
+
+                <div class="terminal-window project-card">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">Portfolio Website</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="terminal-line"><span class="line-comment">// This hacker-themed portfolio,</span></p>
+                        <p class="terminal-line"><span class="line-comment">// built with vanilla HTML/CSS/JS</span></p>
+                        <p class="terminal-line"><span class="line-comment">// and hosted on GitHub Pages.</span></p>
+                        <p class="terminal-line">&nbsp;</p>
+                        <p class="terminal-line"><span class="accent">status</span>: <span
+                                class="string-val">"live"</span></p>
+                        <p class="terminal-line"><span class="accent">stack</span>: <span class="string-val">"HTML, CSS,
+                                JS"</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section reveal-section">
+        <div class="section-inner">
+            <h2 class="section-title"><span class="prompt">#</span> Contact</h2>
+
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">~/contact.sh</span>
+                </div>
+                <div class="terminal-body contact-terminal">
+                    <p class="terminal-line">
+                        <span class="accent">echo</span> $EMAIL
+                    </p>
+                    <p class="terminal-line output-line">
+                        → <a href="mailto:jowel2305341452@diu.edu.bd"
+                            class="contact-link">jowel2305341452@diu.edu.bd</a>
+                    </p>
+                    <p class="terminal-line">&nbsp;</p>
+                    <p class="terminal-line">
+                        <span class="accent">echo</span> $PHONE
+                    </p>
+                    <p class="terminal-line output-line">
+                        → <a href="tel:+8801601933069" class="contact-link">01601933069</a>
+                    </p>
+                    <p class="terminal-line">&nbsp;</p>
+                    <p class="terminal-line">
+                        <span class="accent">echo</span> $GITHUB
+                    </p>
+                    <p class="terminal-line output-line">
+                        → <a href="https://github.com/KafkaScribe" target="_blank" rel="noopener"
+                            class="contact-link">github.com/KafkaScribe</a>
+                    </p>
+                    <p class="terminal-line">&nbsp;</p>
+                    <p class="terminal-line">
+                        <span class="accent">echo</span> $LINKEDIN
+                    </p>
+                    <p class="terminal-line output-line">
+                        → <a href="#" class="contact-link">LinkedIn Profile</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2026 <span class="accent">Nazmul Haque</span> &middot; All systems operational.</p>
+        <p class="footer-sub">Built with <span class="accent">&lt;/code&gt;</span> and ☕</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
