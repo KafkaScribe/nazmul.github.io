@@ -1,135 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nazmul Haque - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Nazmul Haque | Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header class="site-header">
-        <div class="header-container">
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="index.html" class="nav-item active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="nav-item"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="skills.html" class="nav-item"><i class="fas fa-code"></i> Skills</a></li>
-                    <li><a href="#contact" class="nav-item"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </nav>
-            <div class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
-        </div>
-    </header>
 
-    <main class="main-content">
-        <section id="hero" class="section-container">
-            <div class="profile-container">
-                <div class="profile-image-wrapper">
-                    <img src="https://i.ibb.co.com/xcwgsnt/435499066-317453201359215-3889894738429254367-n.jpg" alt="Nazmul Haque" class="avatar">
-                    <div class="profile-backdrop"></div>
-                </div>
-                <div class="profile-content glass-card">
-                    <h1 class="section-title">Nazmul Haque</h1>
-                    <p class="tagline"><span class="highlight">Security Researcher</span> | <span class="highlight">Software Engineering Student</span></p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/nazmul-haque-jowel" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/KafkaScribe" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="https://twitter.com/naga_nazmul" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<header>
+<h1>Nazmul Haque</h1>
+<p>Cybersecurity Enthusiast | Bug Hunter</p>
+</header>
 
-        <section id="about" class="section-container reveal-section">
-            <h2 class="section-title">About Me</h2>
-            <div class="glass-card">
-                <p class="about-text">I am an undergraduate student in the Software Engineering department at Daffodil International University. With a passion for data analysis and a background in cybersecurity, I am a bug hunter with a keen interest in technological innovation.</p>
-            </div>
-        </section>
+<section id="about">
+<h2>About Me</h2>
+<p>
+I am passionate about cybersecurity, vulnerability research,
+and building security frameworks. I enjoy bug bounty hunting
+and developing security tools.
+</p>
+</section>
 
-        <section id="skills" class="section-container reveal-section">
-            <h2 class="section-title">Skills Overview</h2>
-            <div class="skills-container">
-                <div class="skill-category glass-card">
-                    <div class="category-header">
-                        <div class="icon-container">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Security</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li class="skill-item">
-                            <span class="skill-name">Bug Hunting</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" data-percent="90%"></div>
-                            </div>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-name">Network Security</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" data-percent="85%"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="skill-category glass-card">
-                    <div class="category-header">
-                        <div class="icon-container">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Development</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li class="skill-item">
-                            <span class="skill-name">Software Engineering</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" data-percent="80%"></div>
-                            </div>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-name">Data Analysis</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" data-percent="75%"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<section id="projects">
+<h2>Projects</h2>
 
-        <section id="contact" class="section-container reveal-section">
-            <h2 class="section-title">Contact Information</h2>
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <h3>Email</h3>
-                    <p><a href="mailto:jowel2305341452@diu.edu.bd" class="contact-link">jowel2305341452@diu.edu.bd</a></p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone contact-icon"></i>
-                    <h3>Phone</h3>
-                    <p><a href="tel:+8801601933069" class="contact-link">01601933069</a></p>
-                </div>
-            </div>
-        </section>
-    </main>
+<div class="card">
+<h3>FORTRESS Framework</h3>
+<p>A threat-oriented vulnerability scoring framework designed for academic institutions.</p>
+</div>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; 2024 <span class="highlight">Nazmul Haque</span>. All Rights Reserved.</p>
-            <p class="footer-tagline">Crafted with <i class="fas fa-heart"></i> and code</p>
-            <div class="social-links">
-                <a href="https://github.com/KafkaScribe" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/nazmul-haque-jowel" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/naga_nazmul" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
+<div class="card">
+<h3>Bug Bounty Research</h3>
+<p>Finding and responsibly disclosing security vulnerabilities.</p>
+</div>
 
-    <script src="script.js"></script>
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>This portfolio hosted on GitHub Pages.</p>
+</div>
+
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: nazmul@example.com</p>
+<p>GitHub: https://github.com/KafkaScribe</p>
+</section>
+
+<footer>
+<p>© 2026 Nazmul Haque</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
