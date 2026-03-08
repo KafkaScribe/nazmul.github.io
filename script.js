@@ -1,5 +1,5 @@
 /* ============================================
-   CYBERPUNK PORTFOLIO — Script
+   PORTFOLIO — Script (Mint & Gold Theme)
    ============================================ */
 
 // ─── Particle Network Background ─────────
@@ -43,7 +43,7 @@
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 212, 255, 0.6)';
+            ctx.fillStyle = 'rgba(100, 210, 163, 0.5)';
             ctx.fill();
         }
     }
@@ -63,7 +63,7 @@
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+                    ctx.strokeStyle = `rgba(100, 210, 163, ${alpha})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
@@ -77,7 +77,7 @@
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(mouse.x, mouse.y);
-                ctx.strokeStyle = `rgba(255, 107, 53, ${alpha})`;
+                ctx.strokeStyle = `rgba(212, 160, 106, ${alpha})`;
                 ctx.lineWidth = 0.8;
                 ctx.stroke();
             }
@@ -105,7 +105,7 @@
         'Penetration Tester',
         'Vulnerability Researcher',
         'CTF Organizer & Problem Setter',
-        '$6,000+ in Validated Bounties',
+        'Earned Monetary Rewards',
     ];
 
     let phraseIndex = 0;
@@ -243,7 +243,12 @@ if (mobileToggle) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;
-                const target = parseInt(el.getAttribute('data-target'), 10);
+                const targetAttr = el.getAttribute('data-target');
+                if (!targetAttr || isNaN(parseInt(targetAttr, 10))) {
+                    observer.unobserve(el);
+                    return;
+                }
+                const target = parseInt(targetAttr, 10);
                 const prefix = el.getAttribute('data-prefix') || '';
                 const suffix = el.getAttribute('data-suffix') || '';
                 let count = 0;

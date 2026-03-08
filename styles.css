@@ -1,5 +1,6 @@
 /* ============================================
-   CYBERPUNK PORTFOLIO — Nazmul Haque Jowel
+   PORTFOLIO — Nazmul Haque Jowel
+   Eye-Soothing Mint & Gold Theme
    ============================================ */
 
 /* --- Reset & Base --- */
@@ -12,21 +13,21 @@
 }
 
 :root {
-    --bg: #05080f;
-    --bg-panel: #0a1020;
-    --bg-card: #0e1628;
-    --green: #00d4ff;
-    --green-dim: #009ec2;
-    --green-glow: rgba(0, 212, 255, 0.12);
-    --green-glow-strong: rgba(0, 212, 255, 0.3);
-    --cyan: #ff6b35;
-    --cyan-glow: rgba(255, 107, 53, 0.2);
-    --text: #cdd6e0;
-    --text-dim: #5a6a7a;
-    --red: #ff5f56;
-    --yellow: #ffbd2e;
-    --green-dot: #00d4ff;
-    --border: #162035;
+    --bg: #0f1923;
+    --bg-panel: #162433;
+    --bg-card: #1c3040;
+    --green: #64d2a3;
+    --green-dim: #4db38a;
+    --green-glow: rgba(100, 210, 163, 0.1);
+    --green-glow-strong: rgba(100, 210, 163, 0.25);
+    --cyan: #d4a06a;
+    --cyan-glow: rgba(212, 160, 106, 0.15);
+    --text: #c8d3de;
+    --text-dim: #6b7f8e;
+    --red: #e07070;
+    --yellow: #e0c476;
+    --green-dot: #64d2a3;
+    --border: #243545;
     --font-mono: 'Fira Code', 'Courier New', monospace;
 }
 
@@ -73,8 +74,8 @@ body {
     background: repeating-linear-gradient(0deg,
             transparent,
             transparent 2px,
-            rgba(0, 212, 255, 0.008) 2px,
-            rgba(0, 212, 255, 0.008) 4px);
+            rgba(100, 210, 163, 0.006) 2px,
+            rgba(100, 210, 163, 0.006) 4px);
 }
 
 /* --- Navigation --- */
@@ -250,10 +251,35 @@ body {
 .hero-content h1 {
     font-size: clamp(2.2rem, 6vw, 4rem);
     font-weight: 700;
-    color: var(--green);
+    background: linear-gradient(135deg, var(--green) 0%, #a8e6cf 40%, var(--cyan) 70%, var(--green) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 6s ease infinite;
     margin-bottom: 1rem;
     line-height: 1.1;
-    text-shadow: 0 0 20px var(--green-glow-strong), 0 0 60px var(--green-glow);
+    filter: drop-shadow(0 0 20px var(--green-glow-strong));
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.monetary-label {
+    color: var(--green);
+    font-size: 2.2rem;
+    text-shadow: 0 0 10px var(--green-glow);
 }
 
 .typed-container {
@@ -424,7 +450,7 @@ body {
 }
 
 .highlight-line {
-    background: rgba(0, 255, 65, 0.05);
+    background: rgba(100, 210, 163, 0.05);
     margin-left: -1.4rem;
     margin-right: -1.4rem;
     padding-left: 1.4rem;
@@ -658,6 +684,89 @@ body {
 
 .contact-link:hover {
     text-shadow: 0 0 8px var(--green-glow);
+}
+
+/* --- Hero CTA Group --- */
+.hero-cta-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* --- CV Download Button --- */
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--bg);
+    background: linear-gradient(135deg, var(--green), var(--green-dim));
+    padding: 0.7rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid var(--green);
+}
+
+.cv-btn:hover {
+    background: transparent;
+    color: var(--green);
+    box-shadow: 0 0 20px var(--green-glow-strong);
+    transform: translateY(-2px);
+}
+
+.cv-icon {
+    font-size: 1.1rem;
+}
+
+/* --- Education Timeline --- */
+.education-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.edu-entry {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.edu-entry:last-child {
+    margin-bottom: 0;
+}
+
+.edu-dot {
+    position: absolute;
+    left: -2rem;
+    top: 1.4rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--green);
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 10px var(--green-glow-strong);
+    z-index: 2;
+    transform: translateX(-1px);
+}
+
+.edu-line {
+    position: absolute;
+    left: calc(-2rem + 5px);
+    top: 2rem;
+    bottom: -2rem;
+    width: 2px;
+    background: linear-gradient(180deg, var(--green-dim), var(--border));
+}
+
+.edu-entry:last-child .edu-line {
+    display: none;
+}
+
+.edu-entry .terminal-window {
+    margin-bottom: 0;
 }
 
 /* --- Footer --- */
