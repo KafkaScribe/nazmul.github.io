@@ -309,66 +309,143 @@
         <div class="section-inner">
             <h2 class="section-title"><span class="prompt">#</span> Recognitions & Hall of Fame</h2>
 
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="terminal-title">~/recognitions.json</span>
+            <div class="achievement-gallery">
+                <!-- NASA -->
+                <div class="achievement-card" onclick="openLightbox('assets/Nasa-Recognition.jpg')">
+                    <div class="achievement-img-wrap">
+                        <img src="assets/Nasa-Recognition.jpg" alt="NASA Recognition Letter" loading="lazy">
+                        <div class="achievement-overlay">
+                            <span class="view-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="achievement-info">
+                        <span class="achievement-org">NASA</span>
+                        <span class="achievement-type">Letter of Recognition</span>
+                        <span class="achievement-year">2024</span>
+                    </div>
                 </div>
-                <div class="terminal-body">
-                    <p class="terminal-line"><span class="bracket">[</span></p>
-                    <div class="recognition-entry">
-                        <p class="terminal-line">&nbsp; <span class="bracket">{</span></p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"org"</span>: <span
-                                class="string-val">"NASA"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"type"</span>: <span
-                                class="string-val">"Letter of Recognition"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"year"</span>: <span
-                                class="accent">2024</span></p>
-                        <p class="terminal-line">&nbsp; <span class="bracket">}</span>,</p>
+
+                <!-- Kahf -->
+                <div class="achievement-card" onclick="openLightbox('assets/Kahf-Guard-Pentest.jpg')">
+                    <div class="achievement-img-wrap">
+                        <img src="assets/Kahf-Guard-Pentest.jpg" alt="Kahf Certificate of Recognition" loading="lazy">
+                        <div class="achievement-overlay">
+                            <span class="view-icon">🔍</span>
+                        </div>
                     </div>
-                    <div class="recognition-entry">
-                        <p class="terminal-line">&nbsp; <span class="bracket">{</span></p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"org"</span>: <span
-                                class="string-val">"World Health Organization"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"type"</span>: <span
-                                class="string-val">"Hall of Fame"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"year"</span>: <span
-                                class="accent">2024</span></p>
-                        <p class="terminal-line">&nbsp; <span class="bracket">}</span>,</p>
+                    <div class="achievement-info">
+                        <span class="achievement-org">Kahf Yazılım</span>
+                        <span class="achievement-type">Certificate of Recognition</span>
+                        <span class="achievement-year">2025</span>
                     </div>
-                    <div class="recognition-entry">
-                        <p class="terminal-line">&nbsp; <span class="bracket">{</span></p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"org"</span>: <span
-                                class="string-val">"United Nations"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"type"</span>: <span
-                                class="string-val">"Hall of Fame"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"year"</span>: <span
-                                class="accent">2024</span></p>
-                        <p class="terminal-line">&nbsp; <span class="bracket">}</span>,</p>
+                </div>
+
+                <!-- UN -->
+                <div class="achievement-card" onclick="openLightbox('assets/UN-Recognition.jpg')">
+                    <div class="achievement-img-wrap">
+                        <img src="assets/UN-Recognition.jpg" alt="United Nations Hall of Fame" loading="lazy">
+                        <div class="achievement-overlay">
+                            <span class="view-icon">🔍</span>
+                        </div>
                     </div>
-                    <div class="recognition-entry">
-                        <p class="terminal-line">&nbsp; <span class="bracket">{</span></p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"org"</span>: <span
-                                class="string-val">"U.S. Department of Education"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"type"</span>: <span
-                                class="string-val">"Security Recognition"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"year"</span>: <span
-                                class="accent">2024</span></p>
-                        <p class="terminal-line">&nbsp; <span class="bracket">}</span>,</p>
+                    <div class="achievement-info">
+                        <span class="achievement-org">United Nations</span>
+                        <span class="achievement-type">Hall of Fame</span>
+                        <span class="achievement-year">2024</span>
                     </div>
-                    <div class="recognition-entry">
-                        <p class="terminal-line">&nbsp; <span class="bracket">{</span></p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"org"</span>: <span
-                                class="string-val">"University of Sheffield"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"type"</span>: <span
-                                class="string-val">"Cybersecurity Acknowledgment"</span>,</p>
-                        <p class="terminal-line">&nbsp;&nbsp;&nbsp; <span class="info-key">"year"</span>: <span
-                                class="accent">2024</span></p>
-                        <p class="terminal-line">&nbsp; <span class="bracket">}</span></p>
+                </div>
+
+                <!-- WHO -->
+                <div class="achievement-card" onclick="openLightbox('assets/WHO-Recognition.jpg')">
+                    <div class="achievement-img-wrap">
+                        <img src="assets/WHO-Recognition.jpg" alt="WHO Ethical Hacker List" loading="lazy">
+                        <div class="achievement-overlay">
+                            <span class="view-icon">🔍</span>
+                        </div>
                     </div>
-                    <p class="terminal-line"><span class="bracket">]</span></p>
+                    <div class="achievement-info">
+                        <span class="achievement-org">World Health Organization</span>
+                        <span class="achievement-type">Ethical Hacker Hall of Fame</span>
+                        <span class="achievement-year">2024</span>
+                    </div>
+                </div>
+
+                <!-- Sony -->
+                <div class="achievement-card" onclick="openLightbox('assets/Sony-Recognition.jpg')">
+                    <div class="achievement-img-wrap">
+                        <img src="assets/Sony-Recognition.jpg" alt="Secure@Sony Recognition" loading="lazy">
+                        <div class="achievement-overlay">
+                            <span class="view-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="achievement-info">
+                        <span class="achievement-org">Sony</span>
+                        <span class="achievement-type">Secure@Sony Recognition</span>
+                        <span class="achievement-year">2023</span>
+                    </div>
+                </div>
+
+                <!-- US DoE -->
+                <div class="achievement-card" onclick="openLightbox('assets/US-DoE-Recognition.jpg')">
+                    <div class="achievement-img-wrap">
+                        <img src="assets/US-DoE-Recognition.jpg" alt="U.S. Department of Education Certificate"
+                            loading="lazy">
+                        <div class="achievement-overlay">
+                            <span class="view-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="achievement-info">
+                        <span class="achievement-org">U.S. Dept. of Education</span>
+                        <span class="achievement-type">Certificate of Recognition</span>
+                        <span class="achievement-year">2024</span>
+                    </div>
+                </div>
+
+                <!-- Bugcrowd -->
+                <div class="achievement-card" onclick="openLightbox('assets/Bugcrowd-HackerCup-Top3.jpg')">
+                    <div class="achievement-img-wrap">
+                        <img src="assets/Bugcrowd-HackerCup-Top3.jpg" alt="Bugcrowd HackerCup Top 3" loading="lazy">
+                        <div class="achievement-overlay">
+                            <span class="view-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="achievement-info">
+                        <span class="achievement-org">Bugcrowd</span>
+                        <span class="achievement-type">HackerCup Top 3 Coin</span>
+                        <span class="achievement-year">2024</span>
+                    </div>
+                </div>
+
+                <!-- BugHunt 2026 -->
+                <div class="achievement-card" onclick="openLightbox('assets/Bughunt-2026-Finalist.jpg')">
+                    <div class="achievement-img-wrap">
+                        <img src="assets/Bughunt-2026-Finalist.jpg" alt="HackerOne BugHunt 2026 Finalist"
+                            loading="lazy">
+                        <div class="achievement-overlay">
+                            <span class="view-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="achievement-info">
+                        <span class="achievement-org">HackerOne</span>
+                        <span class="achievement-type">BugHunt 2026 Finalist</span>
+                        <span class="achievement-year">2026</span>
+                    </div>
+                </div>
+
+                <!-- Monetary Reward -->
+                <div class="achievement-card" onclick="openLightbox('assets/One-Example-Of-Monetary-Reward.jpg')">
+                    <div class="achievement-img-wrap">
+                        <img src="assets/One-Example-Of-Monetary-Reward.jpg" alt="Bug Bounty Monetary Reward"
+                            loading="lazy">
+                        <div class="achievement-overlay">
+                            <span class="view-icon">🔍</span>
+                        </div>
+                    </div>
+                    <div class="achievement-info">
+                        <span class="achievement-org">Bug Bounty</span>
+                        <span class="achievement-type">Monetary Reward Example</span>
+                        <span class="achievement-year">2024</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -573,6 +650,12 @@
         <p>&copy; 2026 <span class="accent">Nazmul Haque Jowel</span> &middot; All systems operational.</p>
         <p class="footer-sub">Built with <span class="accent">&lt;/code&gt;</span> and ☕</p>
     </footer>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-img" alt="Achievement Screenshot">
+    </div>
 
     <script src="script.js"></script>
 </body>

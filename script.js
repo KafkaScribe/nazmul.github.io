@@ -276,3 +276,22 @@ if (mobileToggle) {
 
     statValues.forEach(val => observer.observe(val));
 })();
+
+// ─── Lightbox for Achievement Gallery ─────────────
+function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
