@@ -641,15 +641,83 @@ body {
     transform: translateY(-2px);
 }
 
-/* --- Projects Grid --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.2rem;
+/* --- Projects List --- */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.project-card .terminal-body {
-    min-height: 160px;
+.project-entry {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.08);
+}
+
+.project-name {
+    font-family: 'Share Tech Mono', 'Fira Code', monospace;
+    font-size: 1.3rem;
+    color: var(--green);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.5px;
+}
+
+.project-desc {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 700px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-tag {
+    font-family: 'Share Tech Mono', 'Fira Code', monospace;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-dim);
+    background: rgba(0, 255, 170, 0.04);
+    letter-spacing: 0.5px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.project-entry:hover .project-tag {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+.project-link {
+    font-family: 'Share Tech Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--green);
+    text-decoration: none;
+    display: inline-block;
+    transition: letter-spacing 0.3s ease, color 0.3s ease;
+}
+
+.project-link:hover {
+    letter-spacing: 1.5px;
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+
+.project-entry:hover .achievement-overlay {
+    opacity: 1;
+}
+
+.project-entry:hover .achievement-img-wrap img {
+    transform: scale(1.05);
 }
 
 /* --- Certifications --- */
